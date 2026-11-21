@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">E-Money</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_transactions">Transactions</string>
+    <string name="nav_add">Add</string>
+    <string name="nav_budgets">Budgets</string>
+    <string name="nav_more">More</string>
+
+    <string name="home_title">Home</string>
+    <string name="home_empty_title">No transactions yet</string>
+    <string name="home_empty_body">Record your first income or expense to see this month\'s summary here.</string>
+    <string name="home_total_balance">Total balance</string>
+    <string name="home_income">Income this month</string>
+    <string name="home_expense">Expense this month</string>
+    <string name="home_latest">Recent transactions</string>
+    <string name="home_no_note">No note</string>
+
+    <string name="transactions_title">Transactions</string>
+    <string name="transactions_empty_title">History is empty</string>
+    <string name="transactions_empty_body">Transactions you record will be grouped by date on this screen.</string>
+    <string name="transactions_search">Search notes</string>
+    <string name="transactions_all">All</string>
+    <string name="transactions_all_wallets">All wallets</string>
+    <string name="transactions_filter_empty">No transactions match the filters.</string>
+
+    <string name="add_title">Add Transaction</string>
+    <string name="add_empty_title">Recording is not active yet</string>
+    <string name="add_empty_body">The amount, category, and wallet form will be built in the transaction CRUD milestone.</string>
+    <string name="transaction_income">Income</string>
+    <string name="transaction_expense">Expense</string>
+    <string name="transaction_transfer">Transfer</string>
+    <string name="transaction_amount">Amount</string>
+    <string name="transaction_wallet">Wallet</string>
+    <string name="transaction_destination_wallet">Destination wallet</string>
+    <string name="transaction_category">Category</string>
+    <string name="transaction_note">Note (optional)</string>
+    <string name="transaction_error_amount">Amount must be greater than zero</string>
+    <string name="transaction_error_selection">Choose a wallet and category</string>
+    <string name="transaction_save">Save transaction</string>
+
+    <string name="budgets_title">Budgets</string>
+    <string name="budgets_empty_title">No budgets yet</string>
+    <string name="budgets_empty_body">Set a monthly spending limit per category to track what is left.</string>
+    <string name="budgets_add">Add budget</string>
+    <string name="budgets_amount">Monthly limit</string>
+    <string name="budgets_category">Category</string>
+    <string name="budgets_total">Total spending</string>
+    <string name="budgets_save">Save budget</string>
+    <string name="budgets_delete">Delete budget</string>
+    <string name="budgets_error_amount">Limit must be greater than zero</string>
+
+    <string name="more_title">More</string>
+    <string name="more_wallets">Wallets</string>
+    <string name="more_wallets_description">Manage cash, bank, and e-wallet accounts</string>
+    <string name="more_categories">Categories</string>
+    <string name="more_categories_description">Manage income and expense categories</string>
+    <string name="more_reports">Reports</string>
+    <string name="more_reports_description">View spending trends and breakdowns</string>
+    <string name="more_sign_out">Sign out</string>
+    <string name="more_empty_title">Settings coming later</string>
+    <string name="more_empty_body">Profile, security, categories, and app preferences will live here.</string>
+
+    <string name="action_back">Back</string>
+    <string name="currency_prefix">Rp</string>
+
+    <string name="wallets_title">Wallets</string>
+    <string name="wallets_add">Add wallet</string>
+    <string name="wallets_empty_title">No wallets yet</string>
+    <string name="wallets_empty_body">Add your first wallet to separate cash, bank, and e-wallet money.</string>
+    <string name="wallets_name_label">Wallet name</string>
+    <string name="wallets_type_label">Wallet type</string>
+    <string name="wallets_initial_balance_label">Opening balance</string>
+    <string name="wallets_initial_balance_hint">Leave empty to start from zero</string>
+    <string name="wallets_save">Save wallet</string>
+    <string name="wallets_archive">Archive</string>
+    <string name="wallets_more_actions">More actions</string>
+    <string name="wallets_archive_title">Archive this wallet?</string>
+    <string name="wallets_archive_message">Wallet \"%1$s\" will be hidden from the list. Its history is kept.</string>
+    <string name="wallets_archive_confirm">Archive</string>
+    <string name="wallets_cancel">Cancel</string>
+    <string name="wallets_error_name">Wallet name is required</string>
+    <string name="wallets_error_amount">Invalid amount</string>
+    <string name="wallets_save_error">Could not save the wallet. Try again.</string>
+
+    <string name="wallet_type_cash">Cash</string>
+    <string name="wallet_type_bank">Bank</string>
+    <string name="wallet_type_ewallet">E-wallet</string>
+    <string name="wallet_type_credit_card">Credit card</string>
+    <string name="wallet_type_savings">Savings</string>
+
+    <string name="categories_title">Categories</string>
+    <string name="categories_add">Add category</string>
+    <string name="categories_edit">Edit category</string>
+    <string name="categories_name_label">Category name</string>
+    <string name="categories_parent_label">Subcategory of</string>
+    <string name="categories_root">Top-level category</string>
+    <string name="categories_type_income">Income</string>
+    <string name="categories_type_expense">Expense</string>
+    <string name="categories_error_name">Category name is required</string>
+    <string name="categories_more_actions">Category actions</string>
+    <string name="categories_archive">Archive</string>
+    <string name="categories_archive_title">Archive this category?</string>
+    <string name="categories_archive_message">Category "%1$s" will be hidden.</string>
+    <string name="reports_title">Reports</string>
+    <string name="reports_categories">Categories</string>
+    <string name="reports_trends">Trends</string>
+    <string name="reports_income_value">Income: %1$s</string>
+    <string name="reports_expense_value">Expense: %1$s</string>
+    <string name="auth_title">Sign in to E-Money</string>
+    <string name="auth_subtitle">Use your email and password to continue.</string>
+    <string name="auth_reset_subtitle">Enter your email to receive a password reset link.</string>
+    <string name="auth_sign_in">Sign in</string>
+    <string name="auth_sign_up">Sign up</string>
+    <string name="auth_create_account">Create account</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_password_error">Password must be at least 6 characters</string>
+    <string name="auth_forgot_password">Forgot password?</string>
+    <string name="auth_send_reset">Send reset link</string>
+    <string name="auth_back_to_sign_in">Back to sign in</string>
+    <string name="auth_check_email">Check your email to confirm the account.</string>
+    <string name="auth_reset_sent">Password reset link sent.</string>
+    <string name="auth_error">Authentication failed. Check your details and connection.</string>
+</resources>

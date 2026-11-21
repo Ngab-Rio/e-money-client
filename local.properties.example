@@ -1,0 +1,4 @@
+# Salin ke local.properties lalu isi nilainya. File local.properties tidak di-commit.
+sdk.dir=/opt/android-sdk
+SUPABASE_URL=
+SUPABASE_ANON_KEY=

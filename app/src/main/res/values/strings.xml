@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">E-Money</string>
+
+    <string name="nav_home">Beranda</string>
+    <string name="nav_transactions">Transaksi</string>
+    <string name="nav_add">Tambah</string>
+    <string name="nav_budgets">Anggaran</string>
+    <string name="nav_more">Lainnya</string>
+
+    <string name="home_title">Beranda</string>
+    <string name="home_empty_title">Belum ada transaksi</string>
+    <string name="home_empty_body">Mulai catat pemasukan atau pengeluaran pertamamu agar ringkasan bulan ini muncul di sini.</string>
+    <string name="home_total_balance">Saldo total</string>
+    <string name="home_income">Masuk bulan ini</string>
+    <string name="home_expense">Keluar bulan ini</string>
+    <string name="home_latest">Transaksi terbaru</string>
+    <string name="home_no_note">Tanpa catatan</string>
+
+    <string name="transactions_title">Transaksi</string>
+    <string name="transactions_empty_title">Riwayat masih kosong</string>
+    <string name="transactions_empty_body">Transaksi yang kamu catat akan tersusun per tanggal di layar ini.</string>
+    <string name="transactions_search">Cari catatan</string>
+    <string name="transactions_all">Semua</string>
+    <string name="transactions_all_wallets">Semua dompet</string>
+    <string name="transactions_filter_empty">Tidak ada transaksi yang cocok dengan filter.</string>
+
+    <string name="add_title">Tambah Transaksi</string>
+    <string name="add_empty_title">Pencatatan belum aktif</string>
+    <string name="add_empty_body">Form nominal, kategori, dan dompet akan dibangun pada milestone CRUD transaksi.</string>
+    <string name="transaction_income">Pemasukan</string>
+    <string name="transaction_expense">Pengeluaran</string>
+    <string name="transaction_transfer">Transfer</string>
+    <string name="transaction_amount">Nominal</string>
+    <string name="transaction_wallet">Dompet</string>
+    <string name="transaction_destination_wallet">Dompet tujuan</string>
+    <string name="transaction_category">Kategori</string>
+    <string name="transaction_note">Catatan (opsional)</string>
+    <string name="transaction_error_amount">Nominal harus lebih dari nol</string>
+    <string name="transaction_error_selection">Pilih dompet dan kategori</string>
+    <string name="transaction_save">Simpan transaksi</string>
+
+    <string name="budgets_title">Anggaran</string>
+    <string name="budgets_empty_title">Belum ada anggaran</string>
+    <string name="budgets_empty_body">Tetapkan batas pengeluaran bulanan per kategori untuk memantau sisanya.</string>
+    <string name="budgets_add">Tambah anggaran</string>
+    <string name="budgets_amount">Batas bulanan</string>
+    <string name="budgets_category">Kategori</string>
+    <string name="budgets_total">Total pengeluaran</string>
+    <string name="budgets_save">Simpan anggaran</string>
+    <string name="budgets_delete">Hapus anggaran</string>
+    <string name="budgets_error_amount">Batas harus lebih dari nol</string>
+
+    <string name="more_title">Lainnya</string>
+    <string name="more_wallets">Dompet</string>
+    <string name="more_wallets_description">Kelola dompet tunai, bank, dan e-wallet</string>
+    <string name="more_categories">Kategori</string>
+    <string name="more_categories_description">Kelola kategori pemasukan dan pengeluaran</string>
+    <string name="more_reports">Laporan</string>
+    <string name="more_reports_description">Lihat tren dan rincian pengeluaran</string>
+    <string name="more_sign_out">Keluar</string>
+    <string name="more_empty_title">Pengaturan menyusul</string>
+    <string name="more_empty_body">Profil, keamanan, kategori, dan preferensi aplikasi akan tersedia di sini.</string>
+
+    <string name="action_back">Kembali</string>
+    <string name="currency_prefix">Rp</string>
+
+    <string name="wallets_title">Dompet</string>
+    <string name="wallets_add">Tambah dompet</string>
+    <string name="wallets_empty_title">Belum ada dompet</string>
+    <string name="wallets_empty_body">Tambahkan dompet pertamamu untuk mulai memisahkan uang tunai, bank, dan e-wallet.</string>
+    <string name="wallets_name_label">Nama dompet</string>
+    <string name="wallets_type_label">Jenis dompet</string>
+    <string name="wallets_initial_balance_label">Saldo awal</string>
+    <string name="wallets_initial_balance_hint">Kosongkan jika dimulai dari nol</string>
+    <string name="wallets_save">Simpan dompet</string>
+    <string name="wallets_archive">Arsipkan</string>
+    <string name="wallets_more_actions">Aksi lainnya</string>
+    <string name="wallets_archive_title">Arsipkan dompet?</string>
+    <string name="wallets_archive_message">Dompet \"%1$s\" akan disembunyikan dari daftar. Riwayatnya tidak dihapus.</string>
+    <string name="wallets_archive_confirm">Arsipkan</string>
+    <string name="wallets_cancel">Batal</string>
+    <string name="wallets_error_name">Nama dompet wajib diisi</string>
+    <string name="wallets_error_amount">Nominal tidak valid</string>
+    <string name="wallets_save_error">Gagal menyimpan dompet. Coba lagi.</string>
+
+    <string name="wallet_type_cash">Tunai</string>
+    <string name="wallet_type_bank">Bank</string>
+    <string name="wallet_type_ewallet">E-wallet</string>
+    <string name="wallet_type_credit_card">Kartu kredit</string>
+    <string name="wallet_type_savings">Tabungan</string>
+
+    <string name="categories_title">Kategori</string>
+    <string name="categories_add">Tambah kategori</string>
+    <string name="categories_edit">Ubah kategori</string>
+    <string name="categories_name_label">Nama kategori</string>
+    <string name="categories_parent_label">Subkategori dari</string>
+    <string name="categories_root">Kategori utama</string>
+    <string name="categories_type_income">Pemasukan</string>
+    <string name="categories_type_expense">Pengeluaran</string>
+    <string name="categories_error_name">Nama kategori wajib diisi</string>
+    <string name="categories_more_actions">Aksi kategori</string>
+    <string name="categories_archive">Arsipkan</string>
+    <string name="categories_archive_title">Arsipkan kategori?</string>
+    <string name="categories_archive_message">Kategori "%1$s" akan disembunyikan.</string>
+    <string name="reports_title">Laporan</string>
+    <string name="reports_categories">Kategori</string>
+    <string name="reports_trends">Tren</string>
+    <string name="reports_income_value">Masuk: %1$s</string>
+    <string name="reports_expense_value">Keluar: %1$s</string>
+    <string name="auth_title">Masuk ke E-Money</string>
+    <string name="auth_subtitle">Gunakan email dan password untuk melanjutkan.</string>
+    <string name="auth_reset_subtitle">Masukkan email untuk menerima tautan reset password.</string>
+    <string name="auth_sign_in">Masuk</string>
+    <string name="auth_sign_up">Daftar</string>
+    <string name="auth_create_account">Buat akun</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_password_error">Password minimal 6 karakter</string>
+    <string name="auth_forgot_password">Lupa password?</string>
+    <string name="auth_send_reset">Kirim tautan reset</string>
+    <string name="auth_back_to_sign_in">Kembali ke masuk</string>
+    <string name="auth_check_email">Cek email untuk konfirmasi akun.</string>
+    <string name="auth_reset_sent">Tautan reset password sudah dikirim.</string>
+    <string name="auth_error">Autentikasi gagal. Periksa data dan koneksi.</string>
+</resources>
