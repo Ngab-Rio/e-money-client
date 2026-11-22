@@ -37,7 +37,7 @@ fun HomeScreen(modifier: Modifier = Modifier, viewModel: HomeViewModel = hiltVie
     } else {
         LazyColumn(modifier.fillMaxSize(), contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
             item { Text(stringResource(R.string.home_title), style = MaterialTheme.typography.headlineSmall) }
-            item { BalanceCard(state.totalBalance) }
+            item { BalanceCard(state.totalBalance, state.balanceHidden) }
             item {
                 Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
                     SummaryCard(stringResource(R.string.home_income), state.monthIncome, MaterialTheme.colorScheme.primary, Modifier.weight(1f))
@@ -51,11 +51,11 @@ fun HomeScreen(modifier: Modifier = Modifier, viewModel: HomeViewModel = hiltVie
 }
 
 @Composable
-private fun BalanceCard(balance: Long) {
+private fun BalanceCard(balance: Long, balanceHidden: Boolean) {
     Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer), modifier = Modifier.fillMaxWidth()) {
         Column(Modifier.padding(20.dp)) {
             Text(stringResource(R.string.home_total_balance), color = MaterialTheme.colorScheme.onPrimaryContainer, style = MaterialTheme.typography.labelLarge)
-            Text(MoneyFormatter.formatRupiah(balance), color = MaterialTheme.colorScheme.onPrimaryContainer, style = MaterialTheme.typography.headlineMedium)
+            Text(if (balanceHidden) stringResource(R.string.home_balance_hidden) else MoneyFormatter.formatRupiah(balance), color = MaterialTheme.colorScheme.onPrimaryContainer, style = MaterialTheme.typography.headlineMedium)
         }
     }
 }

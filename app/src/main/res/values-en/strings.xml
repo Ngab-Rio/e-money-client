@@ -16,6 +16,7 @@
     <string name="home_expense">Expense this month</string>
     <string name="home_latest">Recent transactions</string>
     <string name="home_no_note">No note</string>
+    <string name="home_balance_hidden">••••••</string>
 
     <string name="transactions_title">Transactions</string>
     <string name="transactions_empty_title">History is empty</string>
@@ -61,6 +62,8 @@
     <string name="more_sign_out">Sign out</string>
     <string name="more_empty_title">Settings coming later</string>
     <string name="more_empty_body">Profile, security, categories, and app preferences will live here.</string>
+    <string name="more_security">Security</string>
+    <string name="more_security_description">PIN and balance privacy</string>
 
     <string name="action_back">Back</string>
     <string name="currency_prefix">Rp</string>
@@ -133,4 +136,23 @@
     <string name="auth_save_password">Save new password</string>
     <string name="auth_reset_invalid">The reset link is invalid or has expired. Request a new link.</string>
     <string name="auth_reset_failed">Password could not be updated. Request a new reset link.</string>
+
+    <string name="security_title">Security</string>
+    <string name="security_pin_title">App PIN</string>
+    <string name="security_pin_enabled">PIN enabled</string>
+    <string name="security_pin_disabled">PIN is not enabled</string>
+    <string name="security_hide_balance_title">Hide balances</string>
+    <string name="security_hide_balance_body">Show masked amounts on home and wallet screens</string>
+    <string name="security_set_pin_title">Set a new PIN</string>
+    <string name="security_pin_input">4–6 digit PIN</string>
+    <string name="security_pin_confirm">Confirm PIN</string>
+    <string name="security_pin_error">PIN must contain 4–6 digits and match confirmation</string>
+    <string name="security_save">Save PIN</string>
+    <string name="security_app_lock_title">App lock</string>
+    <string name="security_app_lock_body">Lock the app after 5 minutes in background</string>
+    <string name="security_biometric_title">Biometrics</string>
+    <string name="security_biometric_body">Use fingerprint or face recognition with PIN fallback</string>
+    <string name="security_unlock_title">Unlock E-Money</string>
+    <string name="security_unlock_pin">Enter PIN</string>
+    <string name="security_unlock_button">Unlock</string>
 </resources>

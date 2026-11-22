@@ -12,6 +12,7 @@ import androidx.compose.material.icons.outlined.AccountBalanceWallet
 import androidx.compose.material.icons.outlined.Category
 import androidx.compose.material.icons.outlined.Assessment
 import androidx.compose.material.icons.outlined.Logout
+import androidx.compose.material.icons.outlined.Security
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
@@ -31,6 +32,7 @@ fun MoreScreen(
     onOpenCategories: () -> Unit,
     onOpenReports: () -> Unit,
     onSignOut: () -> Unit,
+    onOpenSecurity: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -88,6 +90,15 @@ fun MoreScreen(
         )
         HorizontalDivider()
 
+        ListItem(
+            headlineContent = { Text(stringResource(R.string.more_security)) },
+            supportingContent = { Text(stringResource(R.string.more_security_description)) },
+            leadingContent = { Icon(Icons.Outlined.Security, contentDescription = null) },
+            trailingContent = { Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null) },
+            modifier = Modifier.clickable(onClick = onOpenSecurity),
+        )
+        HorizontalDivider()
+
         Spacer(Modifier.height(16.dp))
         Text(
             text = stringResource(R.string.more_empty_body),
@@ -100,5 +111,5 @@ fun MoreScreen(
 @Preview(showBackground = true)
 @Composable
 private fun MoreScreenPreview() {
-    EMoneyTheme { MoreScreen(onOpenWallets = {}, onOpenCategories = {}, onOpenReports = {}, onSignOut = {}) }
+    EMoneyTheme { MoreScreen(onOpenWallets = {}, onOpenCategories = {}, onOpenReports = {}, onSignOut = {}, onOpenSecurity = {}) }
 }

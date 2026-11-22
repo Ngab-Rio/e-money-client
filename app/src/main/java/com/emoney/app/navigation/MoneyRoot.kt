@@ -29,6 +29,7 @@ import com.emoney.app.feature.transactions.TransactionsScreen
 import com.emoney.app.feature.wallets.WalletsScreen
 import com.emoney.app.feature.categories.CategoriesScreen
 import com.emoney.app.feature.reports.ReportsScreen
+import com.emoney.app.feature.security.SecurityScreen
 
 @Composable
 fun MoneyRoot(resetUri: Uri? = null) {
@@ -107,6 +108,7 @@ private fun AuthenticatedMoneyRoot(onSignOut: () -> Unit) {
                     onOpenWallets = { navController.navigate(Routes.WALLETS) },
                     onOpenCategories = { navController.navigate(Routes.CATEGORIES) },
                     onOpenReports = { navController.navigate(Routes.REPORTS) },
+                    onOpenSecurity = { navController.navigate(Routes.SECURITY) },
                     onSignOut = onSignOut,
                 )
             }
@@ -118,6 +120,9 @@ private fun AuthenticatedMoneyRoot(onSignOut: () -> Unit) {
             }
             composable(Routes.REPORTS) {
                 ReportsScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Routes.SECURITY) {
+                SecurityScreen(onBack = { navController.popBackStack() })
             }
         }
     }

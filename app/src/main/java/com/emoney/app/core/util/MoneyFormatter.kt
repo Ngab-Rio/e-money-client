@@ -11,4 +11,6 @@ object MoneyFormatter {
 
     fun formatRupiah(amount: Long): String =
         NumberFormat.getCurrencyInstance(indonesia).format(amount)
+
+    fun formatHidden(hidden: Boolean, amount: Long): String = if (hidden) "••••••" else formatRupiah(amount)
 }

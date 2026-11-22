@@ -16,6 +16,7 @@
     <string name="home_expense">Keluar bulan ini</string>
     <string name="home_latest">Transaksi terbaru</string>
     <string name="home_no_note">Tanpa catatan</string>
+    <string name="home_balance_hidden">••••••</string>
 
     <string name="transactions_title">Transaksi</string>
     <string name="transactions_empty_title">Riwayat masih kosong</string>
@@ -61,6 +62,8 @@
     <string name="more_sign_out">Keluar</string>
     <string name="more_empty_title">Pengaturan menyusul</string>
     <string name="more_empty_body">Profil, keamanan, kategori, dan preferensi aplikasi akan tersedia di sini.</string>
+    <string name="more_security">Keamanan</string>
+    <string name="more_security_description">PIN dan privasi saldo</string>
 
     <string name="action_back">Kembali</string>
     <string name="currency_prefix">Rp</string>
@@ -133,4 +136,23 @@
     <string name="auth_save_password">Simpan password baru</string>
     <string name="auth_reset_invalid">Tautan reset tidak valid atau sudah kedaluwarsa. Kirim ulang tautan baru.</string>
     <string name="auth_reset_failed">Password gagal diperbarui. Coba kirim ulang tautan reset.</string>
+
+    <string name="security_title">Keamanan</string>
+    <string name="security_pin_title">PIN aplikasi</string>
+    <string name="security_pin_enabled">PIN aktif</string>
+    <string name="security_pin_disabled">PIN belum aktif</string>
+    <string name="security_hide_balance_title">Sembunyikan saldo</string>
+    <string name="security_hide_balance_body">Tampilkan tanda bintang pada nominal di beranda dan dompet</string>
+    <string name="security_set_pin_title">Atur PIN baru</string>
+    <string name="security_pin_input">PIN 4–6 digit</string>
+    <string name="security_pin_confirm">Konfirmasi PIN</string>
+    <string name="security_pin_error">PIN harus 4–6 digit dan sama dengan konfirmasi</string>
+    <string name="security_save">Simpan PIN</string>
+    <string name="security_app_lock_title">Kunci aplikasi</string>
+    <string name="security_app_lock_body">Kunci aplikasi setelah 5 menit di background</string>
+    <string name="security_biometric_title">Biometrik</string>
+    <string name="security_biometric_body">Gunakan sidik jari atau pengenalan wajah dengan fallback PIN</string>
+    <string name="security_unlock_title">Buka E-Money</string>
+    <string name="security_unlock_pin">Masukkan PIN</string>
+    <string name="security_unlock_button">Buka</string>
 </resources>
