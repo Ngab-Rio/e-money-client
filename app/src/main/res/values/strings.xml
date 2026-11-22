@@ -123,4 +123,12 @@
     <string name="auth_check_email">Cek email untuk konfirmasi akun.</string>
     <string name="auth_reset_sent">Tautan reset password sudah dikirim.</string>
     <string name="auth_error">Autentikasi gagal. Periksa data dan koneksi.</string>
+    <string name="auth_reset_new_title">Password baru</string>
+    <string name="auth_reset_new_subtitle">Masukkan password baru minimal 6 karakter.</string>
+    <string name="auth_password_new">Password baru</string>
+    <string name="auth_password_confirm">Konfirmasi password</string>
+    <string name="auth_password_mismatch">Password tidak sama</string>
+    <string name="auth_save_password">Simpan password baru</string>
+    <string name="auth_reset_invalid">Tautan reset tidak valid atau sudah kedaluwarsa. Kirim ulang tautan baru.</string>
+    <string name="auth_reset_failed">Password gagal diperbarui. Coba kirim ulang tautan reset.</string>
 </resources>

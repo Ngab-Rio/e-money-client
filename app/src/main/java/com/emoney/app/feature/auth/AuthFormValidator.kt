@@ -10,5 +10,10 @@ object AuthFormValidator {
         passwordError = password.length < 6,
     )
 
+    fun validateResetPassword(password: String, confirmPassword: String): AuthValidation = AuthValidation(
+        emailError = false,
+        passwordError = password.length < 6 || password != confirmPassword,
+    )
+
     private val EMAIL_PATTERN = Regex("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$")
 }

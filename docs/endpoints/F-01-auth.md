@@ -11,13 +11,13 @@ Status: partial, email/password implemented
 - Persistent local session in app `SharedPreferences`.
 - Auth gate before the main application.
 - Sign out from `Lainnya`.
+- Password reset completion screen and token exchange inside the app.
 
 ## Not implemented yet
 
 - Google Sign-In.
 - Delete account.
 - Full refresh-token rotation and session revalidation on app resume.
-- Password reset completion screen and token exchange inside the app.
 - Supabase profile bootstrap and owner-scoped local sync.
 
 ## Local contract
@@ -27,6 +27,8 @@ Status: partial, email/password implemented
 `AuthRepository.signUp(email, password)`
 
 `AuthRepository.requestPasswordReset(email)`
+
+`AuthRepository.updatePassword(accessToken, password)`
 
 The repository calls the configured `SUPABASE_URL` with the publishable/anon key from `local.properties`. No service-role key is used in the Android app.
 
@@ -38,6 +40,16 @@ The auth screen is the app entry point when no local session exists. It supports
 
 ```text
 ./gradlew :app:compileDebugKotlin :app:testDebugUnitTest :app:lintDebug
+```
+
+Verification result:
+
+```text
+compileDebugKotlin: successful
+testDebugUnitTest: successful
+lintDebug: successful
+assembleDebug: successful
+EXIT: 0
 ```
 
 Remote sign-in requires the Supabase project URL/key and email confirmation settings to be valid. Automated tests cover local validation only.
