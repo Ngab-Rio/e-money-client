@@ -83,6 +83,8 @@
     <string name="wallets_error_name">Wallet name is required</string>
     <string name="wallets_error_amount">Invalid amount</string>
     <string name="wallets_save_error">Could not save the wallet. Try again.</string>
+    <string name="wallets_edit">Edit wallet</string>
+    <string name="wallets_reset_balance">Reset opening balance</string>
 
     <string name="wallet_type_cash">Cash</string>
     <string name="wallet_type_bank">Bank</string>

@@ -10,4 +10,8 @@ interface WalletRepository {
     suspend fun createWallet(name: String, type: WalletType, initialBalance: Long)
 
     suspend fun archiveWallet(id: String)
+
+    suspend fun updateWallet(id: String, name: String, type: WalletType)
+
+    suspend fun resetInitialBalance(id: String, initialBalance: Long)
 }
