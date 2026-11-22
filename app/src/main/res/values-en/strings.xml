@@ -123,4 +123,12 @@
     <string name="auth_check_email">Check your email to confirm the account.</string>
     <string name="auth_reset_sent">Password reset link sent.</string>
     <string name="auth_error">Authentication failed. Check your details and connection.</string>
+    <string name="auth_reset_new_title">New password</string>
+    <string name="auth_reset_new_subtitle">Enter a new password with at least 6 characters.</string>
+    <string name="auth_password_new">New password</string>
+    <string name="auth_password_confirm">Confirm password</string>
+    <string name="auth_password_mismatch">Passwords do not match</string>
+    <string name="auth_save_password">Save new password</string>
+    <string name="auth_reset_invalid">The reset link is invalid or has expired. Request a new link.</string>
+    <string name="auth_reset_failed">Password could not be updated. Request a new reset link.</string>
 </resources>

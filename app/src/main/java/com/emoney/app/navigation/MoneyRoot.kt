@@ -1,5 +1,6 @@
 package com.emoney.app.navigation
 
+import android.net.Uri
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -7,6 +8,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -29,10 +31,25 @@ import com.emoney.app.feature.categories.CategoriesScreen
 import com.emoney.app.feature.reports.ReportsScreen
 
 @Composable
-fun MoneyRoot() {
+fun MoneyRoot(resetUri: Uri? = null) {
     val authViewModel: AuthViewModel = hiltViewModel()
     val authState by authViewModel.uiState.collectAsStateWithLifecycle()
-    if (authState.session == null) {
+    LaunchedEffect(resetUri) {
+        resetUri?.let { uri ->
+            val fragment = uri.fragment.orEmpty()
+            val fragmentParameters = fragment.split('&').associate { entry ->
+                val parts = entry.split('=', limit = 2)
+                parts[0] to (parts.getOrNull(1)?.let { java.net.URLDecoder.decode(it, "UTF-8") } ?: "")
+            }
+            val accessToken = fragmentParameters["access_token"] ?: uri.getQueryParameter("access_token")
+            val errorCode = fragmentParameters["error_code"] ?: uri.getQueryParameter("error_code")
+            if (errorCode == "otp_expired") authViewModel.startPasswordReset(token = null)
+            else authViewModel.startPasswordReset(token = accessToken)
+        }
+    }
+    if (authState.mode == com.emoney.app.feature.auth.AuthMode.RESET_COMPLETION) {
+        AuthScreen(viewModel = authViewModel)
+    } else if (authState.session == null) {
         AuthScreen(viewModel = authViewModel)
     } else {
         AuthenticatedMoneyRoot(onSignOut = authViewModel::signOut)

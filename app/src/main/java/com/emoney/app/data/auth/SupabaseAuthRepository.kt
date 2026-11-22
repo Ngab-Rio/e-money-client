@@ -43,15 +43,27 @@ class SupabaseAuthRepository @Inject constructor(@ApplicationContext context: Co
 
     override fun signOut() { preferences.edit().clear().apply() }
 
-    private suspend fun request(path: String, body: JSONObject): Result<JSONObject> = withContext(Dispatchers.IO) {
+    override suspend fun updatePassword(accessToken: String, password: String): Result<AuthSession> = request(
+        path = "/auth/v1/user",
+        body = JSONObject().put("password", password),
+        accessToken = accessToken,
+        method = "PUT",
+    ).mapCatching { response ->
+        val email = response.optString("email").ifBlank { null }
+        val userId = response.optString("id").ifBlank { null }
+        AuthSession(accessToken, preferences.getString(KEY_REFRESH_TOKEN, null), userId, email).also(::save)
+    }
+
+    private suspend fun request(path: String, body: JSONObject, accessToken: String? = null, method: String = "POST"): Result<JSONObject> = withContext(Dispatchers.IO) {
         runCatching {
             val connection = (URL(BuildConfig.SUPABASE_URL.trimEnd('/') + path).openConnection() as HttpURLConnection).apply {
-                requestMethod = "POST"
+                requestMethod = method
                 connectTimeout = 15_000
                 readTimeout = 15_000
                 doOutput = true
                 setRequestProperty("apikey", BuildConfig.SUPABASE_ANON_KEY)
                 setRequestProperty("Content-Type", "application/json")
+                accessToken?.let { setRequestProperty("Authorization", "Bearer $it") }
                 outputStream.use { it.write(body.toString().toByteArray(StandardCharsets.UTF_8)) }
             }
             val stream = if (connection.responseCode in 200..299) connection.inputStream else connection.errorStream

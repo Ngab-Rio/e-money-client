@@ -8,4 +8,6 @@ class AuthFormValidatorTest {
     @Test fun `valid email and password are accepted`() { assertFalse(AuthFormValidator.validate("user@example.com", "secret1").hasErrors) }
     @Test fun `invalid email is rejected`() { assertTrue(AuthFormValidator.validate("invalid", "secret1").emailError) }
     @Test fun `short password is rejected`() { assertTrue(AuthFormValidator.validate("user@example.com", "123").passwordError) }
+    @Test fun `matching strong reset password is accepted`() { assertFalse(AuthFormValidator.validateResetPassword("secret1", "secret1").passwordError) }
+    @Test fun `mismatched reset passwords are rejected`() { assertTrue(AuthFormValidator.validateResetPassword("secret1", "secret2").passwordError) }
 }
