@@ -18,7 +18,7 @@ kredensial. Fitur lokal dikerjakan lebih dulu, lalu disambungkan ke auth + sync.
 | 6 | F-06 Dashboard | saldo total, ringkasan bulan, transaksi terbaru | #4 | done (build+test+lint hijau) |
 | 7 | F-05 Anggaran | CRUD budget + progress + ambang | #3,#4 | done (build+test+lint hijau) |
 | 8 | F-07/F-08 Laporan & filter | kategori, tren, filter periode/dompet/tag | #4 | done (build+test+lint hijau; tag menunggu field transaksi) |
-| 9 | F-09 Keamanan | PIN, biometrik, sembunyikan saldo | #1 | todo |
+| 9 | F-09 Keamanan | PIN, biometrik, sembunyikan saldo | #1 | done (PIN, hide balance, app lock, biometrik, lint hijau) |
 | 10 | F-01 Auth | email/password, Google, reset, hapus akun | M1 Supabase | wip (email/password selesai; Google + hapus akun belum) |
 | 11 | F-10 Sinkronisasi | Room + outbox + SyncWorker + Realtime | #10 | todo |
 | 12 | F-11 Tagihan | bills, occurrence, notifikasi, tandai lunas | #4,#11 | todo |

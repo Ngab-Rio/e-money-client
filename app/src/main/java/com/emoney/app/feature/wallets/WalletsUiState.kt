@@ -19,6 +19,7 @@ data class WalletsUiState(
     val isSaving: Boolean = false,
     val form: WalletFormState = WalletFormState(),
     val sheetMode: WalletSheetMode = WalletSheetMode.CREATE,
+    val isBalanceHidden: Boolean = false,
 )
 
 enum class WalletSheetMode { CREATE, EDIT, RESET_BALANCE }

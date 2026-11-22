@@ -138,6 +138,7 @@ fun WalletsScreen(
                         onEdit = { viewModel.openEdit(wallet) },
                         onResetBalance = { viewModel.openResetBalance(wallet) },
                         onArchive = { pendingArchive = wallet },
+                        isBalanceHidden = state.isBalanceHidden,
                     )
                 }
             }
@@ -186,6 +187,7 @@ private fun WalletCard(
     onEdit: () -> Unit,
     onResetBalance: () -> Unit,
     onArchive: () -> Unit,
+    isBalanceHidden: Boolean,
     modifier: Modifier = Modifier,
 ) {
     var menuExpanded by remember { mutableStateOf(false) }
@@ -227,7 +229,7 @@ private fun WalletCard(
             }
 
             Text(
-                text = MoneyFormatter.formatRupiah(wallet.balance),
+                text = if (isBalanceHidden) "••••••" else MoneyFormatter.formatRupiah(wallet.balance),
                 style = MaterialTheme.typography.titleMedium,
                 textAlign = TextAlign.End,
                 maxLines = 1,

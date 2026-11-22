@@ -3,6 +3,7 @@ package com.emoney.app.feature.wallets
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.emoney.app.core.security.SecurityPreferences
 import com.emoney.app.core.util.MoneyParser
 import com.emoney.app.domain.model.WalletType
 import com.emoney.app.domain.repository.WalletRepository
@@ -18,6 +19,7 @@ import kotlinx.coroutines.launch
 @HiltViewModel
 class WalletsViewModel @Inject constructor(
     private val repository: WalletRepository,
+    private val securityPreferences: SecurityPreferences,
 ) : ViewModel() {
 
     private val form = MutableStateFlow(WalletFormState())
@@ -28,12 +30,22 @@ class WalletsViewModel @Inject constructor(
     private val sheetMode = MutableStateFlow(WalletSheetMode.CREATE)
 
     val uiState = combine(
-        repository.observeWallets(),
-        form,
-        isSheetOpen,
-        isSaving,
-        sheetMode,
-    ) { wallets, formState, sheetOpen, saving, mode ->
+        listOf(
+            repository.observeWallets(),
+            form,
+            isSheetOpen,
+            isSaving,
+            sheetMode,
+            securityPreferences.isHideBalanceEnabled(),
+        ),
+    ) { values ->
+        @Suppress("UNCHECKED_CAST")
+        val wallets = values[0] as List<com.emoney.app.domain.model.Wallet>
+        val formState = values[1] as WalletFormState
+        val sheetOpen = values[2] as Boolean
+        val saving = values[3] as Boolean
+        val mode = values[4] as WalletSheetMode
+        val isBalanceHidden = values[5] as Boolean
         WalletsUiState(
             wallets = wallets,
             isLoading = false,
@@ -41,6 +53,7 @@ class WalletsViewModel @Inject constructor(
             isSaving = saving,
             form = formState,
             sheetMode = mode,
+            isBalanceHidden = isBalanceHidden,
         )
     }.stateIn(
         scope = viewModelScope,

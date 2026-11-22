@@ -124,6 +124,7 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     implementation(libs.google.material)
+    implementation(libs.androidx.biometric)
 
     testImplementation(libs.junit)
 
