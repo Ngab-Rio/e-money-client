@@ -23,19 +23,24 @@ class WalletsViewModel @Inject constructor(
     private val form = MutableStateFlow(WalletFormState())
     private val isSheetOpen = MutableStateFlow(false)
     private val isSaving = MutableStateFlow(false)
+    private val editingWalletId = MutableStateFlow<String?>(null)
+    private val resetBalanceWalletId = MutableStateFlow<String?>(null)
+    private val sheetMode = MutableStateFlow(WalletSheetMode.CREATE)
 
     val uiState = combine(
         repository.observeWallets(),
         form,
         isSheetOpen,
         isSaving,
-    ) { wallets, formState, sheetOpen, saving ->
+        sheetMode,
+    ) { wallets, formState, sheetOpen, saving, mode ->
         WalletsUiState(
             wallets = wallets,
             isLoading = false,
             isSheetOpen = sheetOpen,
             isSaving = saving,
             form = formState,
+            sheetMode = mode,
         )
     }.stateIn(
         scope = viewModelScope,
@@ -44,6 +49,9 @@ class WalletsViewModel @Inject constructor(
     )
 
     fun openSheet() {
+        sheetMode.value = WalletSheetMode.CREATE
+        editingWalletId.value = null
+        resetBalanceWalletId.value = null
         form.value = WalletFormState()
         isSheetOpen.value = true
     }
@@ -82,15 +90,25 @@ class WalletsViewModel @Inject constructor(
             return
         }
 
+        val editingId = editingWalletId.value
+        val resetId = resetBalanceWalletId.value
         viewModelScope.launch {
             isSaving.value = true
             try {
-                repository.createWallet(
-                    name = current.name.trim(),
-                    type = current.type,
-                    initialBalance = MoneyParser.parseOrZero(current.initialBalanceInput),
-                )
+                if (editingId != null) {
+                    repository.updateWallet(editingId, current.name, current.type)
+                } else if (resetId != null) {
+                    repository.resetInitialBalance(resetId, MoneyParser.parseOrZero(current.initialBalanceInput))
+                } else {
+                    repository.createWallet(
+                        name = current.name.trim(),
+                        type = current.type,
+                        initialBalance = MoneyParser.parseOrZero(current.initialBalanceInput),
+                    )
+                }
                 form.value = WalletFormState()
+                editingWalletId.value = null
+                resetBalanceWalletId.value = null
                 isSheetOpen.value = false
             } catch (error: Exception) {
                 Log.e(TAG, "Gagal menyimpan dompet", error)
@@ -109,6 +127,26 @@ class WalletsViewModel @Inject constructor(
                 Log.e(TAG, "Gagal mengarsipkan dompet", error)
             }
         }
+    }
+
+    fun openEdit(wallet: com.emoney.app.domain.model.Wallet) {
+        editingWalletId.value = wallet.id
+        resetBalanceWalletId.value = null
+        form.value = WalletFormState(name = wallet.name, type = wallet.type)
+        sheetMode.value = WalletSheetMode.EDIT
+        isSheetOpen.value = true
+    }
+
+    fun openResetBalance(wallet: com.emoney.app.domain.model.Wallet) {
+        editingWalletId.value = null
+        resetBalanceWalletId.value = wallet.id
+        form.value = WalletFormState(
+            name = wallet.name,
+            type = wallet.type,
+            initialBalanceInput = wallet.initialBalance.toString(),
+        )
+        sheetMode.value = WalletSheetMode.RESET_BALANCE
+        isSheetOpen.value = true
     }
 
     private companion object {

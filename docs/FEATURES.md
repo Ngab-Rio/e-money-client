@@ -11,7 +11,7 @@ kredensial. Fitur lokal dikerjakan lebih dulu, lalu disambungkan ke auth + sync.
 | # | Fitur | Slice | Depends on | Status |
 | --- | --- | --- | --- | --- |
 | 1 | F-02 Dompet | list, tambah, arsipkan | M0 | done (build+test+lint hijau) |
-| 2 | F-02 Dompet | detail, ubah nama/tipe, atur ulang saldo | #1 + F-03 | todo |
+| 2 | F-02 Dompet | detail, ubah nama/tipe, atur ulang saldo | #1 + F-03 | done (build+test+lint hijau) |
 | 3 | F-04 Kategori | seed bawaan, list, tambah/ubah, subkategori | #1 | done (implementasi lokal + verifikasi) |
 | 4 | F-03 Transaksi | income/expense + form + saldo | #1,#3 | done (build+test+lint hijau) |
 | 5 | F-03 Transaksi | transfer antar dompet | #4 | done (build+test+lint hijau) |

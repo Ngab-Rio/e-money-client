@@ -135,6 +135,8 @@ fun WalletsScreen(
                 items(items = state.wallets, key = { it.id }) { wallet ->
                     WalletCard(
                         wallet = wallet,
+                        onEdit = { viewModel.openEdit(wallet) },
+                        onResetBalance = { viewModel.openResetBalance(wallet) },
                         onArchive = { pendingArchive = wallet },
                     )
                 }
@@ -181,6 +183,8 @@ fun WalletsScreen(
 @Composable
 private fun WalletCard(
     wallet: Wallet,
+    onEdit: () -> Unit,
+    onResetBalance: () -> Unit,
     onArchive: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -242,6 +246,14 @@ private fun WalletCard(
                     expanded = menuExpanded,
                     onDismissRequest = { menuExpanded = false },
                 ) {
+                    DropdownMenuItem(
+                        text = { Text(stringResource(R.string.wallets_edit)) },
+                        onClick = { menuExpanded = false; onEdit() },
+                    )
+                    DropdownMenuItem(
+                        text = { Text(stringResource(R.string.wallets_reset_balance)) },
+                        onClick = { menuExpanded = false; onResetBalance() },
+                    )
                     DropdownMenuItem(
                         text = { Text(stringResource(R.string.wallets_archive)) },
                         onClick = {

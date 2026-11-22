@@ -34,4 +34,16 @@ class WalletFormValidatorTest {
 
         assertFalse(errors.hasErrors)
     }
+
+    @Test
+    fun `reset balance accepts zero`() {
+        val result = WalletFormValidator.validate("Cash", "0")
+        assertFalse(result.hasErrors)
+    }
+
+    @Test
+    fun `reset balance rejects invalid amount`() {
+        val result = WalletFormValidator.validate("Cash", "abc")
+        assertTrue(result.amountError)
+    }
 }

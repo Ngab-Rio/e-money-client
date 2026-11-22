@@ -51,4 +51,10 @@ interface WalletDao {
         """,
     )
     suspend fun archive(id: String, updatedAt: Long)
+
+    @Query("UPDATE wallets SET name = :name, type = :type, updated_at = :updatedAt WHERE id = :id AND deleted_at IS NULL")
+    suspend fun update(id: String, name: String, type: String, updatedAt: Long)
+
+    @Query("UPDATE wallets SET initial_balance = :initialBalance, updated_at = :updatedAt WHERE id = :id AND deleted_at IS NULL")
+    suspend fun resetInitialBalance(id: String, initialBalance: Long, updatedAt: Long)
 }

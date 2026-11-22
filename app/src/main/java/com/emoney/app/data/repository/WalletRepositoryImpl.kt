@@ -37,6 +37,14 @@ class WalletRepositoryImpl @Inject constructor(
         walletDao.archive(id, Instant.now().toEpochMilli())
     }
 
+    override suspend fun updateWallet(id: String, name: String, type: WalletType) {
+        walletDao.update(id, name.trim(), type.name.lowercase(), Instant.now().toEpochMilli())
+    }
+
+    override suspend fun resetInitialBalance(id: String, initialBalance: Long) {
+        walletDao.resetInitialBalance(id, initialBalance, Instant.now().toEpochMilli())
+    }
+
     private fun WalletEntity.toDomain(): Wallet = Wallet(
         id = id,
         name = name,
